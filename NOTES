@@ -1,0 +1,54 @@
+WordPress Notes
+
+Multiple tiers/environments:
+1. Local 
+2. Dev branches 
+3. Dev environnement/main branch 
+4. QA/staging - we deploy the dev artifact (zip of code files) to QA
+5. Production - we deploy the dev artifact (zip of code files) to production 
+The higher you go in the tier the more finished it should be. Though all tiers should be somewhat working 
+
+Block editor, the backend posts
+
+Lock - locks the versions of tools we are using for WP
+
+
+File Structure 
+
+wordpress.org is the software, open source material, and software community. There is also a blog where people talk about the development of WP. Know for a fast 
+downloading processes.
+
+wordpress.com is hosting company
+
+- Three main folders:
+- 1. Admin - bootstrap
+- 2. Content - costumed stuff: plugins, themes, and uploads
+- 3. Includes - Wordpress itself
+- wp-config-sample.php
+    - Make some edits 
+    - Rename it to wp-config.php
+- When hosting the website we are using a web server
+    - Apache  (linux) 
+        - (WE USE THIS ONE)
+    - Nginx (engine - x)  (linux)
+    - ils (windows) 
+- Apache also uses configuration files (called ghost files)
+    - What this does is equate a directory to a site url 
+    - Virtual directory - dir where site lives 
+    - Looks for index.php, index.html, or intex.htm This Sequence Is What Begins the Whole Process
+- Loading, running, bootstrapping Wordpress means that someone is trying to load a page on the browser
+- Check to see if the config.php file exists, if it does not then we look for it  at the directory right above it (this makes upgrading easier since it is not longer 
+  nested in the Wordpress directory). If it does exist we require it. 
+- It then goes through all the other files in the directory via calls in each file. The order is important to setting up the information correctly and making sure 
+  everything is accounted for. 
+
+Composer: dependency manager
+		      installs all the plugins that live outside of our site repo
+
+Summary:
+Browsers -> web server -> vhost -> virtual directory -> index.php -> wordpress page load begins 
+
+
+Database Structure 
+
+Most consistent problem: inability to look a problem and break it down to smaller more manageable problems 
