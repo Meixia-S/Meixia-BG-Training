@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>My Website Title</title>
+		<style>
+			td {
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<form method="get" action="myformhandler.html">
+			<table>
+				<tr>
+					<th>Check</th>
+					<th>Label</th>
+					<th>Form field</th>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="first_check"></td>
+					<td>First field</td>
+					<td><input type="text" id="first_text" name="first_text" value="first"></td>
+				</tr>
+			</table>
+			<button id="btnAddRow" name="btnAddRow">Add Row</button>
+		</form>
+		<script>
+			let runAddRow = function( event ) {
+				event.preventDefault();
+				myTable            = document.querySelector('table');
+				newRow             = document.createElement('tr');
+				newCellOne         = document.createElement('td');
+				newCellTwo         = document.createElement('td');
+				newCellThree       = document.createElement('td');
+				newCellOneCheckbox = document.createElement('input');
+				newCellOneCheckbox.setAttribute('type', 'checkbox');
+				newCellOne.appendChild(newCellOneCheckbox);
+				newRow.appendChild(newCellOne);
+				newRow.appendChild(newCellTwo);
+				newRow.appendChild(newCellThree);
+				myTable.appendChild(newRow);
+			}
+			btnAddRow = document.getElementById('btnAddRow');
+			btnAddRow.addEventListener('click', runAddRow );
+
+		</script>
+	</body>
+</html>
