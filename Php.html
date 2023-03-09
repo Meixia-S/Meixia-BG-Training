@@ -1,3 +1,90 @@
+filename.php
+
+<?php <-- open php block
+<? <-- dont use this, but does same thing. not always allowed.
+?> <-- close php block
+       
+<body>
+    <p>My name is <?php echo $my_name ?>.</p>
+</body>
+
+$ <-- all php variables start with this.
+foreach vs $foreach
+$ avoids naming collisions.
+php.net <-- official documentation for php.
+-----------------------------------------------------------------------------
+
+HTML Forms
+
+<form method="" action="" ></form>
+
+Action - where you are submitting your form. What file/page do
+you want the submit event to go to.
+
+Method - defines the HTTP method used to pass data.
+    GET - uses a querystring
+    POST - passes data in the headers
+    PUT - means you are putting something somewhere. (like maybe a file upload?)
+    DELETE - obvi
+    GET & POST will be 95% of what you need
+--------------------------------------------
+
+Querystring
+    part of the url that follows a question mark. ?
+    https://www.boston.com/category/sports?orderby=name&sort=DESC
+    Querystring = ?orderby=name&sort=DESC
+    key/value pairs separated by &
+    orderby=name
+    sort=DESC
+--------------------------------------------
+
+<form method="GET" action="https://www.boston.com/category/sports">
+    <input type="hidden" name="orderby" value="name"/>
+    <input type="hidden" name="sort" value="DESC" />
+    <input type="Submit" name="submit" />
+</form>
+--------------------------------------------
+
+Submitting this form navigates you to this url:
+    https://www.boston.com/category/sports?orderby=name&sort=DESC
+Submitting with POST
+
+<form method="POST" action="https://www.boston.com/category/sports">
+    <input type="hidden" name="orderby" value="name"/>
+    <input type="hidden" name="sort" value="DESC" />
+    <input type="Submit" name="submit" />
+</form>
+--------------------------------------------
+
+Submitting this form navigates to this url:
+    https://www.boston.com/category/sports
+    information is passed in the header in the same format as GET.
+    orderby=name&sort=DESC
+    ^ this is the format you will see data passed within the header.
+$_SERVER
+$_GET
+$_POST
+$_REQUEST
+
+https://www.boston.com/?s=patriots
+$search = $_GET['s'];
+if ( $search !== '' ) {
+    // look $search up in the db?
+    $result = fakelookupfunction( $search );
+}
+echo $result;
+$value = print_r( $value, true );
+error_log( 'FUNCTION NAME: ' . print_r( $my_array, true ) );
+. = concatenates (combines strings)
+-----------------------------------------------------------------------------
+
+Homework:
+Make a form for a fake survey.
+Hit submit.
+Next page should echo out all the data that was submitted.
+Can submit to new page or self.
+-----------------------------------------------------------------------------
+
 <!-- Using PHP to retrieve user input from a 'form' --> 
 <html>
   <header>
