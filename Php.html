@@ -1,1 +1,17 @@
 <!-- Using PHP to retrieve user input from a 'form' --> 
+<html>
+  <header>
+    <title> PHP Practice </title>
+  </header>
+    <body>
+      
+      <!-- store fnames and id numbers in an assorated array. Ex: $array1 = ["Bill => "194725927", etc.]; -->
+  
+      <form name="form" action="" method="post" action="pgp.html">
+        <input type="text" name="fname" id="fname" value="id number">
+      </form>
+      
+      <?php echo $_POST('fname'); ?>
+      
+   </body>
+</html>
